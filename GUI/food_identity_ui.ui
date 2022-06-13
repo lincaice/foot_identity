@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1080</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1080</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1080</width>
+    <height>720</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(255, 255, 255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>50</y>
+      <width>271</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 22pt &quot;黑体&quot;;
+color: rgb(78, 110, 242);</string>
+    </property>
+    <property name="text">
+     <string>Resnet食品识别</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="picture_btn">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>580</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#picture_btn{
+font: 11pt &quot;黑体&quot;;
+color: #fff;
+background-color: #4e6ef2;
+border:none;
+border-radius:6px;
+}
+#picture_btn:hover{
+background-color:#4662d9;
+}</string>
+    </property>
+    <property name="text">
+     <string>选择图片</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="img_box">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>150</y>
+      <width>481</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-image: url(&quot;https://ai.bdstatic.com/file/59915F3F62BF4D9B8CF845B2F929279F&quot;);
+image: url(&quot;https://ai.bdstatic.com/file/59915F3F62BF4D9B8CF845B2F929279F&quot;);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="identity_btn">
+    <property name="geometry">
+     <rect>
+      <x>370</x>
+      <y>580</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#identity_btn{font: 11pt &quot;黑体&quot;;
+color: #fff;
+background-color: #4e6ef2;
+border:none;
+border-radius:6px;
+}
+#identity_btn:hover{
+background-color:#4662d9;
+}</string>
+    </property>
+    <property name="text">
+     <string>开始识别</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>550</y>
+      <width>381</width>
+      <height>121</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="title">
+     <string>识别结果</string>
+    </property>
+    <widget class="QLabel" name="result_label">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>50</y>
+       <width>271</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="result_icon">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>41</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>640</x>
+      <y>300</y>
+      <width>381</width>
+      <height>201</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>功能</string>
+    </property>
+    <widget class="QPushButton" name="mix_btn">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>60</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#mix_btn{font: 11pt &quot;黑体&quot;;
+color: #fff;
+background-color: #4e6ef2;
+border:none;
+border-radius:6px;
+}
+#mix_btn:hover{
+background-color:#4662d9;
+}</string>
+     </property>
+     <property name="text">
+      <string>展示混淆矩阵</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="error_btn">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>60</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#error_btn{font: 11pt &quot;黑体&quot;;
+color: #fff;
+background-color: #4e6ef2;
+border:none;
+border-radius:6px;
+}
+#error_btn:hover{
+background-color:#4662d9;
+}</string>
+     </property>
+     <property name="text">
+      <string>错分类样本</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="loss_btn">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>130</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#loss_btn{font: 11pt &quot;黑体&quot;;
+color: #fff;
+background-color: #4e6ef2;
+border:none;
+border-radius:6px;
+}
+#loss_btn:hover{
+background-color:#4662d9;
+}</string>
+     </property>
+     <property name="text">
+      <string>损失函数</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="other_btn">
+     <property name="geometry">
+      <rect>
+       <x>220</x>
+       <y>130</y>
+       <width>131</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">#other_btn{font: 11pt &quot;黑体&quot;;
+color: #fff;
+background-color: #4e6ef2;
+border:none;
+border-radius:6px;
+}
+#other_btn:hover{
+background-color:#4662d9;
+}</string>
+     </property>
+     <property name="text">
+      <string>其他数据</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>130</y>
+      <width>351</width>
+      <height>141</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(153, 153, 153);
+font:18px;</string>
+    </property>
+    <property name="text">
+     <string>可识别包括热狗，饺子，冰淇淋等十种食物，
+返回识别的食物名称，并有混淆矩阵和错分
+类样本等相关数据展示</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="title_icon">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>50</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
