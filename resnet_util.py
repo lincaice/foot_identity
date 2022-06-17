@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 label = ['苹果派', '鸡翅', '巧克力蛋糕', '甜甜圈', '菲力牛排', '年糕', '饺子', '汉堡包', '热狗', '冰淇淋']
-
+img_shape = (224, 224, 3)
+class_num = 10
 
 # 加载数据 （训练集路径，测试集路径，宽，高）
 def load_data(train_src, test_src, width, height):

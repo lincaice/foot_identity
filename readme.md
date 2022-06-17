@@ -1,4 +1,4 @@
-# 图像处理作业（食物识别）
+# 机器学习作业（食物识别）
 ## <span style='color:red'>作者：lincaice</span>
 ## process/move_picture.py
 包含训练集和测试集的分割

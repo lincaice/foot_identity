@@ -173,6 +173,7 @@ class Ui_MainWindow(object):
         self.loss_btn.clicked.connect(self.show_loss)
         self.picture_btn.clicked.connect(self.select_img)
         self.identity_btn.clicked.connect(self.predict_img)
+        self.other_btn.clicked.connect(self.other_data)
 
     def show_mix(self):
         self.img_src='E:\pythonTest\\ve_test\\vegetables_tf2.3-master\GUI\data_img\\resnet_heatmap1.png'
@@ -182,6 +183,9 @@ class Ui_MainWindow(object):
         self.img_box.setPixmap(QPixmap(self.img_src))
     def show_loss(self):
         self.img_src='E:\pythonTest\\ve_test\\vegetables_tf2.3-master\GUI\data_img\\results_resnet.png'
+        self.img_box.setPixmap(QPixmap(self.img_src))
+    def other_data(self):
+        self.img_src = 'E:\pythonTest\\foot_identity\GUI\data_img\\APR.png'
         self.img_box.setPixmap(QPixmap(self.img_src))
     def select_img(self):
         directory = QtWidgets.QFileDialog.getOpenFileName(None, "选取图片", "./", "*.png , *.jpg")  # 起始路径

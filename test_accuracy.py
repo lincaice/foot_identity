@@ -127,7 +127,12 @@ def calculate_APR(confusion_matrix,test_data_size):
     print(accuracy)
     print(precision)
     print(recall)
+    f1=[]
+    for i in precision:
+        f1.append(2 * precision[i] * recall[i]) / (precision[i] + recall[i])
+    print(f1)
+
 
 
 if __name__ == '__main__':
-    resnet_test("../models/resnet_foot_easy.h5")
+    resnet_test("./models/resnet_foot_easy.h5")

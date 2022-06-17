@@ -9,19 +9,17 @@ def resnet_model1(shape=resnet_util.img_shape,class_num=resnet_util.class_num):
                                                              include_top=False,
                                                              weights='imagenet')
 
-    base_model.trainable = False
+    base_model.trainable = True
+    for layers in base_model.layers[:-10]:
+        layers.trainable = False
+
     model = tf.keras.models.Sequential([
-        # 进行归一化的处理
         tf.keras.layers.experimental.preprocessing.Rescaling(1. / 127.5, offset=-1, input_shape=shape),
-        # 设置主干模型
         base_model,
-        # 对主干模型的输出进行全局平均池化
         tf.keras.layers.GlobalAveragePooling2D(),
-        # 通过全连接层映射到最后的分类数目上
         tf.keras.layers.Dense(class_num, activation='softmax')
     ])
     model.summary()
-    # 模型训练的优化器为adam优化器，模型的损失函数为交叉熵损失函数
     model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
     return model
 
@@ -51,7 +49,7 @@ def show_curve(history):
     plt.ylabel('Cross Entropy')
     plt.title('Training and Validation Loss')
     plt.xlabel('epoch')
-    plt.savefig('results/results_mobilenet.png', dpi=300)
+    plt.savefig('models/results_resnet.png', dpi=300)
     
 
 # 开始训练(训练次数)
